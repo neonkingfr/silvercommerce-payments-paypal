@@ -1,0 +1,7 @@
+---
+Name: "paymentspaypalconfig"
+---
+# Replace standard Purchase Service, with updated (to check for redirect issue marking payments "paid" when they are not)
+Injector:
+  SilverStripe\Omnipay\Service\PurchaseService:
+    class: App\Omnipay\RedirectFixPurchaseService
